@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MedSecOp | Home</title>
+        <!-- Tailwind Css -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    'blue-primary': '#106eea',
+                  }
+                }
+              }
+            }
+          </script>
+        <!-- Css -->
+        <link rel="stylesheet" href="./css/all.css">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="navbar" class="w-full fixed top-0 left-0 z-[999] transition-all duration-300 ease-in-out bg-transparent py-4">
+            <div class="max-w-[1200px] w-[90%] mx-auto py-4 flex justify-between items-center">
+                <!-- Logo -->
+                <div>
+                    <a href="./index.html">
+                        <h1 class="text-[2rem] font-medium text-white">Logo</h1>
+                    </a>
+                </div>
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex items-center text-white">
+                    <a href="./index.html" class="border px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Home</a>
+                    <a href="./who_are_we.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Who We Are</a>
+                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">What We Do</a>
+                    <a href="./contact.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Contact</a>
+                </nav>
+                <!-- Menu icon -->
+                <div id="menu-icon" class="md:hidden relative z-[99] text-white text-3xl cursor-pointer">
+                    <!-- Bars svg -->
+                    <svg id="menu-bars" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!-- cancel svg -->
+                    <svg id="menu-times" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </div>
+            </div>
+            <!-- Mobile Links -->
+            <div id="mobile-nav" class="fixed top-0 left-0 w-full bg-white transition-all h-0 overflow-hidden md:hidden">
+                <div class="flex flex-col items-center mt-20 w-full">
+                    <a href="./index.html" class="text-[1.2rem] hover:text-[#797979d7] bg-[#0000000c] border-0 w-full text-center transition-all ease-in-out py-[10px]">Home</a>
+                    <a href="./who_are_we.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Who We Are</a>
+                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">What We Do</a>
+                    <a href="./contact.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Contact</a>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Main -->
+        <main>
+            <!-- Section one -->
+            <section class="w-full flex bg-fixed items-center relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/home_section_one.webp');">
+                <!-- bg-overlay -->
+                <div class="bg-[#00000069] z-[0] w-full h-full absolute top-0"></div>
+                <!-- Adjuster -->
+                <div class="max-w-[1200px] relative z-[1] w-[90%] mx-auto py-[130px] lg:py-[240px]">
+                    <!-- Title -->
+                    <h1 class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]"><span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Expert Second Opinions</span> from Leading Specialists-Fast, Secure, and Affordable</h1>
+                    <!-- Sub title -->
+                    <p class="text-white mx-auto text-center text-[1.4rem] mt-[30px] md:text-[1.8rem] md:max-w-[60%]">
+                        Gain clarity on your diagnosis or treatment plan from top doctors worldwide
+                    </p>
+                    <!-- CTAs -->
+                    <div class="flex gap-[20px] items-center flex-col w-fit mx-auto mt-[30px] md:flex-row">
+                        <a href="https://patient.medsecop.com/login" class="uppercase bg-blue-primary transition-all border border-blue-primary text-white font-medium hover:bg-white hover:border-white hover:text-blue-primary text-[1.2rem] py-[1.4rem] px-[3rem] w-fit">Get a Second Opinion</a>
+                        <a href="https://doctor.medsecop.com/login" class="uppercase bg-white transition-all border border-white text-blue-primary font-medium hover:bg-blue-primary hover:border-blue-primary hover:text-white text-[1.2rem] py-[1.4rem] px-[3rem] w-fit">Join Our Expert Network</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section two -->
+            <section class="w-full py-[40px]">
+                <!-- adjuster -->
+                <div class="max-w-[1200px] w-[90%] mx-auto">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center gap-[20px]">
+                        <!-- Heading -->
+                        <h1 class="text-[2.4rem] text-center md:text-[3.7rem] font-bold text-black">
+                            See What We Do
+                        </h1>
+                        <!-- Watch Now -->
+                        <button id="openModal" class="flex gap-[3px] items-center bg-[#FF0000] text-white py-[7px] px-[15px] rounded-xl transition-all hover:text-[#FF0000] hover:bg-transparent border border-[#FF0000]">
+                            <span class="text-[1.2rem]">Watch</span>
+                            <i class="fa-brands fa-youtube text-[1.5rem]"></i>
+                        </button>
+                    </div>
+                    <!-- List -->
+                    <div class="flex w-full flex-col gap-[20px] mt-[30px]">
+                        <!-- Single-Turn Pathology Review -->
+                        <div class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                            <!-- text content -->
+                            <div class="md:w-1/2 flex flex-col gap-[20px]">
+                                <!-- title -->
+                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Single-Turn Pathology Review</h1>
+                                <!-- body -->
+                                <p class="text-[1.4rem] md:text-left text-justify">Our expert pathologists provide thorough and precise single-review pathology assessments to ensure diagnostic accuracy. Whether you're seeking a second opinion or confirmation of a prior diagnosis, we deliver trusted results promptly.</p>
+                            </div>
+                            <!-- image -->
+                            <div class="md:w-1/2">
+                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/stpr_img.webp" alt="Single-Turn Pathology Review">
+                            </div>
+                        </div>
+                        <!-- Multi-Round Reviews -->
+                        <div class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                            <!-- text content -->
+                            <div class="md:w-1/2 flex flex-col gap-[20px]">
+                                <!-- title -->
+                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Multi-Round Reviews</h1>
+                                <!-- body -->
+                                <p class="text-[1.4rem] md:text-left text-justify">For complex cases, we offer multi-round pathology reviews, ensuring the highest level of confidence in the results. Choose between 2, 3, or 4 rounds of expert consultations for a comprehensive review.</p>
+                            </div>
+                            <!-- image -->
+                            <div class="md:w-1/2">
+                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/mrr_img.webp" alt="Multi-Round Reviews">
+                            </div>
+                        </div>
+                        <!-- Direct Consultations -->
+                        <div class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                            <!-- text content -->
+                            <div class="md:w-1/2 flex flex-col gap-[20px]">
+                                <!-- title -->
+                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Direct Consultations</h1>
+                                <!-- body -->
+                                <p class="text-[1.4rem] md:text-left text-justify">Need real-time expert guidance? Our direct consultations connect you with top medical professionals, allowing live discussions for better understanding and decision-making.</p>
+                            </div>
+                            <!-- image -->
+                            <div class="md:w-1/2">
+                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/dc_img.webp" alt="Direct Consultations">
+                            </div>
+                        </div>
+                        <!-- MedSecOp AI (Coming Soon) -->
+                        <div class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                            <!-- text content -->
+                            <div class="md:w-1/2 flex flex-col gap-[20px]">
+                                <!-- title -->
+                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">MedSecOp AI (Coming Soon)</h1>
+                                <!-- body -->
+                                <p class="text-[1.4rem] md:text-left text-justify">Leveraging advanced AI technology, MedSecOp AI assists physicians by analyzing vast amounts of medical data and providing insightful diagnostic support to enhance accuracy and efficiency.</p>
+                            </div>
+                            <!-- image -->
+                            <div class="md:w-1/2">
+                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/ma_img.webp" alt="MedSecOp AI">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Modal -->
+            <div id="videoModal" class="fixed z-[999] inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+                <div class="bg-white p-5 rounded-lg max-w-[90%] w-[600px] relative">
+                    <!-- Close Button -->
+                    <svg id="closeModal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-9 cursor-pointer absolute top-[-25px] right-0">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                    <!-- Video -->
+                    <iframe id="videoFrame" class="w-full aspect-video rounded-md" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-[#000]">
+            <!-- adjuster -->
+            <div class="max-w-[1200px] w-[90%] mx-auto">
+                <!-- super footer -->
+                <div class="flex flex-col lg:flex-row flex-wrap justify-between gap-[30px] lg:pt-[90px] pt-[60px] pb-[30px] lg:pb-[45px]">
+                    <!-- Contact details -->
+                    <div class="text-white">
+                        <!-- Logo -->
+                        <p class="text-[2.6rem] font-semibold">MedSecOp</p>
+                        <!-- Address -->
+                        <p class="text-[1.4rem] mt-[15px]">Vaughan, Ontario, Canada</p>
+                        <!-- phone -->
+                        <p class="text-[1.4rem] mt-[10px]"><span class="font-semibold text-[1.4rem]">Phone:</span> +1 (437) 410-2473</p>
+                        <!-- email -->
+                        <p class="text-[1.4rem] mt-[5px]"><span class="font-semibold text-[1.4rem]">Email:</span> medsecop.org@gmail.com</p>
+                        <!-- social links -->
+                        <div class="flex mt-[15px] gap-[10px]">
+                            <!-- twitter -->
+                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                                <i class="fa-brands fa-x-twitter text-[#fff] text-opacity-75 text-[1.6rem]"></i>
+                            </a>
+                            <!-- facebook -->
+                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                                <i class="fa-brands fa-facebook text-[#fff] text-opacity-75 text-[1.6rem]"></i>
+                            </a>
+                            <!-- instagram -->
+                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                                <i class="fa-brands fa-instagram text-[#fff] text-opacity-75 text-[1.6rem]"></i>
+                            </a>
+                            <!-- linkedIn -->
+                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                                <i class="fa-brands fa-linkedin text-[#fff] text-opacity-75 text-[1.6rem]"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Useful Links -->
+                    <div class="text-white">
+                        <!-- Heading -->
+                        <p class="text-[2rem] font-semibold">Useful Links</p>
+                        <!-- links -->
+                        <div class="flex flex-col gap-[10px] mt-[20px]">
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./index.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Home</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./who_we_are.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Who We Are</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">What We Do</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./terms_of_service.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Terms of service</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Our Services -->
+                    <div class="text-white">
+                        <!-- Heading -->
+                        <p class="text-[2rem] font-semibold">Our Services</p>
+                        <!-- links -->
+                        <div class="flex flex-col gap-[10px] mt-[20px]">
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./services.html#stprDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Pathology Review</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./services.html#mrrDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Reviews (2,3, or 4 Reviews)</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./services.html#dcDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Direct Consultations</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="maDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">MedSecOp AI (Coming Soon)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="./js/all.js"></script>
+        <script src="./js/videoModal.js"></script>
+    </body>
+</html>
