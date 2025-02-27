@@ -21,6 +21,8 @@
         <link rel="stylesheet" href="./css/all.css">
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     </head>
     <body>
         <!-- Header -->
@@ -63,7 +65,7 @@
         </header>
     
         <!-- Main -->
-        <main>
+        <main class="overflow-x-hidden">
             <!-- Section one -->
             <section class="w-full flex items-center bg-fixed relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/services_section_one.webp');">
                 <!-- bg-overlay -->
@@ -71,7 +73,7 @@
                 <!-- Adjuster -->
                 <div class="max-w-[1200px] relative z-[1] w-[90%] mx-auto py-[130px] lg:py-[240px]">
                     <!-- Title -->
-                    <h1 class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]"><span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Our</span> Services</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="2000" class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]"><span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Our</span> Services</h1>
                 </div>
             </section>
 
@@ -82,7 +84,7 @@
                     <!-- List -->
                     <div class="flex w-full flex-col gap-[20px] mt-[30px]">
                         <!-- Single-Turn Pathology Review -->
-                        <div id="stprDiv" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                        <div data-aos="fade-left" data-aos-duration="500" id="stprDiv" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
                             <!-- text content -->
                             <div class="md:w-1/2 flex flex-col gap-[20px]">
                                 <!-- title -->
@@ -96,7 +98,7 @@
                             </div>
                         </div>
                         <!-- Multi-Round Reviews -->
-                        <div id="mrrDiv" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                        <div data-aos="fade-right" data-aos-duration="500" id="mrrDiv" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
                             <!-- text content -->
                             <div class="md:w-1/2 flex flex-col gap-[20px]">
                                 <!-- title -->
@@ -110,7 +112,7 @@
                             </div>
                         </div>
                         <!-- Direct Consultations -->
-                        <div id="dcDiv" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                        <div data-aos="fade-left" data-aos-duration="500" id="dcDiv" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
                             <!-- text content -->
                             <div class="md:w-1/2 flex flex-col gap-[20px]">
                                 <!-- title -->
@@ -124,7 +126,7 @@
                             </div>
                         </div>
                         <!-- MedSecOp AI (Coming Soon) -->
-                        <div id="maDiv" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
+                        <div data-aos="fade-right" data-aos-duration="500" id="maDiv" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
                             <!-- text content -->
                             <div class="md:w-1/2 flex flex-col gap-[20px]">
                                 <!-- title -->
@@ -265,5 +267,11 @@
         <!-- Script -->
         <script src="./js/all.js"></script>
         <script src="./js/mailto.js"></script>
+
+        <!-- AOS Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>

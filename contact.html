@@ -21,6 +21,8 @@
         <link rel="stylesheet" href="./css/all.css">
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     </head>
     <body>
         <!-- Header -->
@@ -63,7 +65,7 @@
         </header>
     
         <!-- Main -->
-        <main>
+        <main class="overflow-x-hidden">
             <!-- Section one -->
             <section class="w-full flex items-center bg-fixed relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/contact_section_one.webp');">
                 <!-- bg-overlay -->
@@ -71,7 +73,7 @@
                 <!-- Adjuster -->
                 <div class="max-w-[1200px] relative z-[1] w-[90%] mx-auto py-[130px] lg:py-[240px]">
                     <!-- Title -->
-                    <h1 class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]">Contact <span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Us</span></h1>
+                    <h1 data-aos="fade-up" data-aos-duration="2000" class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]">Contact <span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Us</span></h1>
                 </div>
             </section>
 
@@ -79,44 +81,44 @@
             <section class="w-full">
                 <!-- Adjuster -->
                 <div class="max-w-[1200px] py-[40px] w-[90%] mx-auto">
-                    <p class="text-[1.8rem]">Interested in learning how we can support your medical affairs, or regulatory needs? Fill the form below, We’re ready to partner with you.</p>
+                    <p data-aos="fade-right" data-aos-duration="500" class="text-[1.8rem]">Interested in learning how we can support your medical affairs, or regulatory needs? Fill the form below, We’re ready to partner with you.</p>
                     
                     <div class="flex flex-col md:flex-row mt-[40px] gap-[20px]">
                         <form class="w-full md:w-1/2" id="contact-form">
-                            <p class="text-[2.4rem] font-bold text-blue-primary leading-[1.25] mb-[25px]">Get in touch with us</p>
-                            <p class="text-[1.2rem] uppercase italic mb-[15px]">
+                            <p data-aos="fade-right" data-aos-duration="500" class="text-[2.4rem] font-bold text-blue-primary leading-[1.25] mb-[25px]">Get in touch with us</p>
+                            <p data-aos="fade-right" data-aos-duration="500" class="text-[1.2rem] uppercase italic mb-[15px]">
                                 <span class="text-[1.2rem] text-[#ff2825]">*</span> Indicates required field
                             </p>
             
                             <div class="w-full">
-                                <label class="text-[1.6rem]">NAME <span class="text-[#ff2825]">*</span></label>
+                                <label data-aos="fade-right" data-aos-duration="500" class="text-[1.6rem] block">NAME <span class="text-[#ff2825]">*</span></label>
                                 <div class="my-[10px] w-full flex flex-col sm:flex-row gap-[10px]">
-                                    <input type="text" placeholder="First" class="w-full md:w-1/2 text-[1.2rem] border py-[10px] px-[20px] border-gray-400" name="first_name" required>
-                                    <input type="text" placeholder="Last" class="w-full md:w-1/2 text-[1.2rem] border py-[10px] px-[20px] border-gray-400" name="last_name" required>
+                                    <input data-aos="fade-right" data-aos-duration="500" type="text" placeholder="First" class="w-full md:w-1/2 text-[1.2rem] border py-[10px] px-[20px] border-gray-400" name="first_name" required>
+                                    <input data-aos="fade-left" data-aos-duration="500" type="text" placeholder="Last" class="w-full md:w-1/2 text-[1.2rem] border py-[10px] px-[20px] border-gray-400" name="last_name" required>
                                 </div>
                             </div>
             
                             <div class="w-full">
-                                <label class="text-[1.6rem]">EMAIL <span class="text-[#ff2825]">*</span></label>
-                                <input type="email" class="my-[10px] w-full text-[1.2rem] border py-[10px] px-[20px] border-gray-400" name="email" required>
+                                <label data-aos="fade-right" data-aos-duration="500" class="text-[1.6rem] block">EMAIL <span class="text-[#ff2825]">*</span></label>
+                                <input data-aos="fade-up" data-aos-duration="500" type="email" class="my-[10px] w-full text-[1.2rem] border py-[10px] px-[20px] border-gray-400" name="email" required>
                             </div>
             
                             <div class="w-full">
-                                <label class="text-[1.6rem]">MESSAGE <span class="text-[#ff2825]">*</span></label>
-                                <textarea class="my-[10px] w-full text-[1.2rem] border py-[10px] px-[20px] border-gray-400 h-[200px] resize-none" name="message" required></textarea>
+                                <label data-aos="fade-right" data-aos-duration="500" class="text-[1.6rem] block">MESSAGE <span class="text-[#ff2825]">*</span></label>
+                                <textarea data-aos="fade-up" data-aos-duration="500" class="my-[10px] w-full text-[1.2rem] border py-[10px] px-[20px] border-gray-400 h-[200px] resize-none" name="message" required></textarea>
                             </div>
             
-                            <button type="submit" class="hover:text-blue-primary hover:bg-transparent text-white bg-blue-primary border-blue-primary transition-all border text-[1.2rem] py-[1.4rem] px-[3rem] w-fit">Submit</button>
+                            <button data-aos="fade-up" data-aos-duration="500" type="submit" class="hover:text-blue-primary hover:bg-transparent text-white bg-blue-primary border-blue-primary transition-all border text-[1.2rem] py-[1.4rem] px-[3rem] w-fit">Submit</button>
                         </form>
             
                         <div class="w-full md:w-1/2">
-                            <p class="text-[1.6rem] text-[#5f5f5f] mb-[20px]">
+                            <p data-aos="fade-right" data-aos-duration="500" class="text-[1.6rem] text-[#5f5f5f] mb-[20px]">
                                 MedSecOp<br>
                                 38 Honeycrisp Crescent, Vaughan, Ontario, L4K 0M8<br>
                                 (437) 410-2473<br>
                                 medsecop.org@gmail.com<br>
                             </p>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.6257586957116!2d-79.51092468453562!3d43.826224779115736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b300b40df70e3%3A0x561d82b47bb2cbe8!2s38%20Honeycrisp%20Crescent%2C%20Vaughan%2C%20ON%20L4K%200M8%2C%20Canada!5e0!3m2!1sen!2sng!4v1694799406849!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map"></iframe>
+                            <iframe data-aos="fade-up" data-aos-duration="500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.6257586957116!2d-79.51092468453562!3d43.826224779115736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b300b40df70e3%3A0x561d82b47bb2cbe8!2s38%20Honeycrisp%20Crescent%2C%20Vaughan%2C%20ON%20L4K%200M8%2C%20Canada!5e0!3m2!1sen!2sng!4v1694799406849!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map"></iframe>
                         </div>
                     </div>
                 </div>
@@ -246,5 +248,11 @@
         <!-- Script -->
         <script src="./js/all.js"></script>
         <script src="./js/mailto.js"></script>
+
+        <!-- AOS Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
