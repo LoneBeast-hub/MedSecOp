@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- AOS CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="./assets/favicon.png">
     </head>
     <body>
         <!-- Header -->
@@ -35,11 +37,24 @@
                     </a>
                 </div>
                 <!-- Desktop Links -->
-                <nav class="hidden md:flex items-center text-white">
+                <nav class="hidden md:flex items-center text-white relative">
                     <a href="./index.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Home</a>
                     <a href="./who_we_are.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Who We Are</a>
-                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">What We Do</a>
+                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Our Services</a>
                     <a href="./contact.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Contact</a>
+                    
+                    <!-- Login Button -->
+                    <div class="relative">
+                        <button id="login-btn" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem] focus:outline-none">
+                            Login
+                        </button>
+
+                        <!-- Dropdown Modal -->
+                        <div id="login-modal" class="hidden absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg overflow-hidden">
+                            <a href="https://patient.medsecop.com/login" class="block px-4 py-2 hover:bg-gray-200 text-[1.2rem]">Patient</a>
+                            <a href="https://doctor.medsecop.com/login" class="block px-4 py-2 hover:bg-gray-200 text-[1.2rem]">Doctor</a>
+                        </div>
+                    </div>
                 </nav>
                 <!-- Menu icon -->
                 <div id="menu-icon" class="md:hidden relative z-[99] text-white text-3xl cursor-pointer">
@@ -58,8 +73,21 @@
                 <div class="flex flex-col items-center mt-20 w-full">
                     <a href="./index.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Home</a>
                     <a href="./who_we_are.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Who We Are</a>
-                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">What We Do</a>
+                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Our Services</a>
                     <a href="./contact.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Contact</a>
+
+                    <!-- Login Button -->
+                    <div class="relative w-full text-center">
+                        <button id="mobile-login-btn" class="text-[1.2rem] w-full py-[10px] hover:text-[#797979d7] transition-all ease-in-out">
+                            Login
+                        </button>
+
+                        <!-- Dropdown Modal -->
+                        <div id="mobile-login-modal" class="hidden flex flex-col w-full bg-gray-100 shadow-md">
+                            <a href="https://patient.medsecop.com/login" class="text-[1.2rem] py-[10px] hover:bg-gray-200">Patient</a>
+                            <a href="https://doctor.medsecop.com/login" class="text-[1.2rem] py-[10px] hover:bg-gray-200">Doctor</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -94,7 +122,7 @@
                             </div>
                             <!-- image -->
                             <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/pond_img.webp" alt="Professional Opinion, Not Diagnosis">
+                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/dc_img.webp" alt="Professional Opinion, Not Diagnosis">
                             </div>
                         </div>
                         <!-- Consult Your Primary Healthcare Provider -->
@@ -136,7 +164,7 @@
                             </div>
                             <!-- image -->
                             <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/home_section_one.webp" alt="Accuracy and Completeness of Information">
+                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/aci_img.webp" alt="Accuracy and Completeness of Information">
                             </div>
                         </div>
                         <!-- Limitation of Liability -->
@@ -205,19 +233,15 @@
                         <!-- social links -->
                         <div class="flex mt-[15px] gap-[10px]">
                             <!-- twitter -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://twitter.com/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-x-twitter text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
-                            <!-- facebook -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
-                                <i class="fa-brands fa-facebook text-[#fff] text-opacity-75 text-[1.6rem]"></i>
-                            </a>
                             <!-- instagram -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://www.instagram.com/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-instagram text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
                             <!-- linkedIn -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://www.linkedin.com/in/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-linkedin text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
                         </div>
@@ -250,7 +274,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">What We Do</a>
+                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Our Services</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -259,6 +283,14 @@
                                 </svg>
                                 <!-- link -->
                                 <a href="./terms_of_service.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Terms of service</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./our_technology.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Our Technology</a>
                             </div>
                         </div>
                     </div>
@@ -274,7 +306,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html#stprDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Pathology Review</a>
+                                <a href="./services.html#stmirDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Medical Image Review</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -282,7 +314,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html#mrrDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Reviews (2,3, or 4 Reviews)</a>
+                                <a href="./services.html#mrmirDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Medical Image Review (2,3, or 4 Reviews)</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->

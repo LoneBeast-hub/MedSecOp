@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- AOS CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="./assets/favicon.png">
     </head>
     <body>
         <!-- Header -->
@@ -31,15 +33,28 @@
                 <!-- Logo -->
                 <div>
                     <a href="./index.html">
-                        <h1 class="text-[2rem] font-medium text-white">Logo</h1>
+                        <img class="max-w-[100px]" src="./assets/full_logo.png" alt="MedSecOp">
                     </a>
                 </div>
                 <!-- Desktop Links -->
-                <nav class="hidden md:flex items-center text-white">
+                <nav class="hidden md:flex items-center text-white relative">
                     <a href="./index.html" class="border px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Home</a>
                     <a href="./who_we_are.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Who We Are</a>
-                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">What We Do</a>
+                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Our Services</a>
                     <a href="./contact.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Contact</a>
+                    
+                    <!-- Login Button -->
+                    <div class="relative">
+                        <button id="login-btn" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem] focus:outline-none">
+                            Login
+                        </button>
+
+                        <!-- Dropdown Modal -->
+                        <div id="login-modal" class="hidden absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg overflow-hidden">
+                            <a href="https://patient.medsecop.com/login" class="block px-4 py-2 hover:bg-gray-200 text-[1.2rem]">Patient</a>
+                            <a href="https://doctor.medsecop.com/login" class="block px-4 py-2 hover:bg-gray-200 text-[1.2rem]">Doctor</a>
+                        </div>
+                    </div>
                 </nav>
                 <!-- Menu icon -->
                 <div id="menu-icon" class="md:hidden relative z-[99] text-white text-3xl cursor-pointer">
@@ -58,8 +73,21 @@
                 <div class="flex flex-col items-center mt-20 w-full">
                     <a href="./index.html" class="text-[1.2rem] hover:text-[#797979d7] bg-[#0000000c] border-0 w-full text-center transition-all ease-in-out py-[10px]">Home</a>
                     <a href="./who_we_are.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Who We Are</a>
-                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">What We Do</a>
+                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Our Services</a>
                     <a href="./contact.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Contact</a>
+
+                    <!-- Login Button -->
+                    <div class="relative w-full text-center">
+                        <button id="mobile-login-btn" class="text-[1.2rem] w-full py-[10px] hover:text-[#797979d7] transition-all ease-in-out">
+                            Login
+                        </button>
+
+                        <!-- Dropdown Modal -->
+                        <div id="mobile-login-modal" class="hidden flex flex-col w-full bg-gray-100 shadow-md">
+                            <a href="https://patient.medsecop.com/login" class="text-[1.2rem] py-[10px] hover:bg-gray-200">Patient</a>
+                            <a href="https://doctor.medsecop.com/login" class="text-[1.2rem] py-[10px] hover:bg-gray-200">Doctor</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -67,7 +95,7 @@
         <!-- Main -->
         <main class="overflow-x-hidden">
             <!-- Section one -->
-            <section class="w-full flex bg-fixed items-center relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/home_section_one.webp');">
+            <section class="w-full flex bg-fixed items-center relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/home_hero.webp');">
                 <!-- bg-overlay -->
                 <div class="bg-[#00000069] z-[0] w-full h-full absolute top-0"></div>
                 <!-- Adjuster -->
@@ -91,94 +119,22 @@
                 <!-- adjuster -->
                 <div class="max-w-[1200px] w-[90%] mx-auto">
                     <!-- Header -->
-                    <div class="flex justify-between items-center gap-[20px]">
+                    <div>
                         <!-- Heading -->
-                        <h1 data-aos="fade-right" data-aos-duration="2000" class="text-[2.4rem] text-center md:text-[3.7rem] font-bold text-black">
-                            See What We Do
+                        <h1 data-aos="fade-right" data-aos-duration="2000" class="text-[2.4rem] md:text-[3.7rem] font-bold text-black">
+                            Why We Built MedSecOp
                         </h1>
-                        <!-- Watch Now -->
-                        <button data-aos="fade-left" data-aos-duration="2000" id="openModal" class="flex gap-[3px] items-center bg-[#FF0000] text-white py-[7px] px-[15px] rounded-xl transition-all hover:text-[#FF0000] hover:bg-transparent border border-[#FF0000]">
-                            <span class="text-[1.2rem]">Watch</span>
-                            <i class="fa-brands fa-youtube text-[1.5rem]"></i>
-                        </button>
                     </div>
-                    <!-- List -->
-                    <div class="flex w-full flex-col gap-[20px] mt-[30px]">
-                        <!-- Single-Turn Pathology Review -->
-                        <div data-aos="fade-left" data-aos-duration="500" id="stprDiv" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Single-Turn Pathology Review</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">Our expert pathologists provide thorough and precise single-review pathology assessments to ensure diagnostic accuracy. Whether you're seeking a second opinion or confirmation of a prior diagnosis, we deliver trusted results promptly.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/stpr_img.webp" alt="Single-Turn Pathology Review">
-                            </div>
-                        </div>
-                        <!-- Multi-Round Reviews -->
-                        <div data-aos="fade-right" data-aos-duration="500" id="mrrDiv" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Multi-Round Reviews</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">For complex cases, we offer multi-round pathology reviews, ensuring the highest level of confidence in the results. Choose between 2, 3, or 4 rounds of expert consultations for a comprehensive review.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/mrr_img.webp" alt="Multi-Round Reviews">
-                            </div>
-                        </div>
-                        <!-- Direct Consultations -->
-                        <div data-aos="fade-left" data-aos-duration="500" id="dcDiv" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Direct Consultations</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">Need real-time expert guidance? Our direct consultations connect you with top medical professionals, allowing live discussions for better understanding and decision-making.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/dc_img.webp" alt="Direct Consultations">
-                            </div>
-                        </div>
-                        <!-- MedSecOp AI (Coming Soon) -->
-                        <div data-aos="fade-right" data-aos-duration="500" id="maDiv" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">MedSecOp AI (Coming Soon)</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">Leveraging advanced AI technology, MedSecOp AI assists physicians by analyzing vast amounts of medical data and providing insightful diagnostic support to enhance accuracy and efficiency.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/ma_img.webp" alt="MedSecOp AI">
-                            </div>
-                        </div>
+                    <!-- Video -->
+                    <div data-aos="fade-up" data-aos-duration="500" class="w-full mt-[20px]">
+                        <iframe src="https://www.youtube.com/embed/We8-6Ax6mLk?si=D--thwtJuGqKfNRs" id="videoFrame" class="w-full aspect-video rounded-md" src="" allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
-
-            <!-- Video Modal -->
-            <div id="videoModal" class="fixed z-[999] inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
-                <div class="bg-white p-5 rounded-lg max-w-[90%] w-[600px] relative">
-                    <!-- Close Button -->
-                    <svg id="closeModal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-9 cursor-pointer absolute top-[-25px] right-0">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                    <!-- Video -->
-                    <iframe id="videoFrame" class="w-full aspect-video rounded-md" src="" allowfullscreen></iframe>
-                </div>
-            </div>
         </main>
 
         <!-- Footer -->
-        <footer class="bg-[#000]">
+        <footer class="bg-black">
             <!-- adjuster -->
             <div class="max-w-[1200px] w-[90%] mx-auto">
                 <!-- super footer -->
@@ -196,19 +152,15 @@
                         <!-- social links -->
                         <div class="flex mt-[15px] gap-[10px]">
                             <!-- twitter -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://twitter.com/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-x-twitter text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
-                            <!-- facebook -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
-                                <i class="fa-brands fa-facebook text-[#fff] text-opacity-75 text-[1.6rem]"></i>
-                            </a>
                             <!-- instagram -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://www.instagram.com/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-instagram text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
                             <!-- linkedIn -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://www.linkedin.com/in/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-linkedin text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
                         </div>
@@ -241,7 +193,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">What We Do</a>
+                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Our Services</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -250,6 +202,14 @@
                                 </svg>
                                 <!-- link -->
                                 <a href="./terms_of_service.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Terms of service</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./our_technology.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Our Technology</a>
                             </div>
                         </div>
                     </div>
@@ -265,7 +225,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html#stprDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Pathology Review</a>
+                                <a href="./services.html#stmirDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Medical Image Review</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -273,7 +233,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html#mrrDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Reviews (2,3, or 4 Reviews)</a>
+                                <a href="./services.html#mrmirDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Medical Image Review (2,3, or 4 Reviews)</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -299,7 +259,6 @@
 
         <!-- Script -->
         <script src="./js/all.js"></script>
-        <script src="./js/videoModal.js"></script>
 
         <!-- AOS Library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>

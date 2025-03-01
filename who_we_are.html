@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- AOS CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="./assets/favicon.png">
     </head>
     <body>
         <!-- Header -->
@@ -35,11 +37,24 @@
                     </a>
                 </div>
                 <!-- Desktop Links -->
-                <nav class="hidden md:flex items-center text-white">
+                <nav class="hidden md:flex items-center text-white relative">
                     <a href="./index.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Home</a>
                     <a href="./who_we_are.html" class="border px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Who We Are</a>
-                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">What We Do</a>
+                    <a href="./services.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Our Services</a>
                     <a href="./contact.html" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem]">Contact</a>
+                    
+                    <!-- Login Button -->
+                    <div class="relative">
+                        <button id="login-btn" class="border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem] text-[1.2rem] focus:outline-none">
+                            Login
+                        </button>
+
+                        <!-- Dropdown Modal -->
+                        <div id="login-modal" class="hidden absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg overflow-hidden">
+                            <a href="https://patient.medsecop.com/login" class="block px-4 py-2 hover:bg-gray-200 text-[1.2rem]">Patient</a>
+                            <a href="https://doctor.medsecop.com/login" class="block px-4 py-2 hover:bg-gray-200 text-[1.2rem]">Doctor</a>
+                        </div>
+                    </div>
                 </nav>
                 <!-- Menu icon -->
                 <div id="menu-icon" class="md:hidden relative z-[99] text-white text-3xl cursor-pointer">
@@ -58,8 +73,21 @@
                 <div class="flex flex-col items-center mt-20 w-full">
                     <a href="./index.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Home</a>
                     <a href="./who_we_are.html" class="text-[1.2rem] hover:text-[#797979d7] bg-[#0000000c] border-0 w-full text-center transition-all ease-in-out py-[10px]">Who We Are</a>
-                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">What We Do</a>
+                    <a href="./services.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Our Services</a>
                     <a href="./contact.html" class="text-[1.2rem] hover:bg-[#0000000c] hover:text-[#797979d7] transition-all ease-in-out py-[10px] w-full text-center">Contact</a>
+
+                    <!-- Login Button -->
+                    <div class="relative w-full text-center">
+                        <button id="mobile-login-btn" class="text-[1.2rem] w-full py-[10px] hover:text-[#797979d7] transition-all ease-in-out">
+                            Login
+                        </button>
+
+                        <!-- Dropdown Modal -->
+                        <div id="mobile-login-modal" class="hidden flex flex-col w-full bg-gray-100 shadow-md">
+                            <a href="https://patient.medsecop.com/login" class="text-[1.2rem] py-[10px] hover:bg-gray-200">Patient</a>
+                            <a href="https://doctor.medsecop.com/login" class="text-[1.2rem] py-[10px] hover:bg-gray-200">Doctor</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -67,13 +95,13 @@
         <!-- Main -->
         <main class="overflow-x-hidden">
             <!-- Section one -->
-            <section class="w-full flex items-center bg-fixed relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/who_we_are_section_one.webp');">
+            <section class="w-full flex items-center bg-fixed relative min-h-[100vh] max-h-[880px] bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/about_section_one.webp');">
                 <!-- bg-overlay -->
                 <div class="bg-[#00000069] z-[0] w-full h-full absolute top-0"></div>
                 <!-- Adjuster -->
                 <div class="max-w-[1200px] relative z-[1] w-[90%] mx-auto py-[130px] lg:py-[240px]">
                     <!-- Title -->
-                    <h1 data-aos="fade-up" data-aos-duration="2000" class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]"><span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Our</span> Technology</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="2000" class="text-center text-white text-[3.8rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.1rem]">About <span class="text-[#5fa4ff] text-[3.8rem] md:text-[4.8rem]">Us</span></h1>
                 </div>
             </section>
 
@@ -81,78 +109,34 @@
             <section class="w-full">
                 <!-- Adjuster -->
                 <div class="max-w-[1200px] py-[40px] w-[90%] mx-auto">
-                    <!-- List -->
-                    <div class="flex w-full flex-col gap-[20px] mt-[30px]">
-                        <!-- Secure and Reliable -->
-                        <div data-aos="fade-left" data-aos-duration="500" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Secure and Reliable</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">Medsecop uses advanced encryption protocols to protect personal health information in compliance with HIPAA and other relevant data protection regulations. Our platform is hosted on secure, cloud-based infrastructure designed to maintain data integrity and ensure availability without compromising privacy.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/sar_img.webp" alt="Secure and Reliable">
-                            </div>
-                        </div>
-                        <!-- AI-Enhanced Diagnostics -->
-                        <div data-aos="fade-right" data-aos-duration="500" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">AI-Enhanced Diagnostics</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">The backbone of Medsecop is our pioneering AI technology, MedSecOp AI, which supports the diagnostic process by providing additional layers of analysis. This AI tool is trained on a vast database of medical images and diagnostic outcomes, enabling it to offer suggestions and insights that assist doctors in making more accurate diagnoses.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/ma_img.webp" alt="AI-Enhanced Diagnostics">
-                            </div>
-                        </div>
-                        <!-- User-Friendly Interface -->
-                        <div data-aos="fade-left" data-aos-duration="500" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">User-Friendly Interface</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">We prioritize simplicity and ease of use in our design to ensure that both patients and doctors can navigate our platform effortlessly. From registering and scheduling a consultation to receiving a second opinion, every step is guided and intuitive.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/ufi_img.webp" alt="User-Friendly Interface">
-                            </div>
-                        </div>
-                        <!-- Integration Capabilities -->
-                        <div data-aos="fade-right" data-aos-duration="500" class="border cursor-pointer md:flex-row-reverse group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Integration Capabilities</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">Medsecop is designed to integrate smoothly with existing healthcare systems, including electronic health records (EHR) and picture archiving and communication systems (PACS), facilitating a seamless flow of information and enhancing the continuity of care.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-l-xl" src="./assets/ic_img.webp" alt="Integration Capabilities">
-                            </div>
-                        </div>
-                        <!-- Ongoing Improvements -->
-                        <div data-aos="fade-left" data-aos-duration="500" class="border cursor-pointer group hover:bg-blue-primary hover:text-white hover:shadow-xl border-blue-primary p-[10px] rounded-xl flex gap-[20px] md:flex-row flex-col items-center transition-all justify-between">
-                            <!-- text content -->
-                            <div class="md:w-1/2 flex flex-col gap-[20px]">
-                                <!-- title -->
-                                <h1 class="text-[3rem] font-medium text-left text-blue-primary group-hover:text-white leading-[1.1]">Ongoing Improvements</h1>
-                                <!-- body -->
-                                <p class="text-[1.4rem] md:text-left text-justify">Our commitment to innovation means we continually update our platform with the latest technological enhancements. We listen to feedback from our users to make improvements that truly meet their needs and exceed their expectations.</p>
-                            </div>
-                            <!-- image -->
-                            <div class="md:w-1/2">
-                                <img class="w-full rounded-b-xl md:rounded-b-none md:rounded-r-xl" src="./assets/oi_img.webp" alt="Ongoing Improvements">
-                            </div>
-                        </div>
+                    <p data-aos="fade-left" data-aos-duration="500" class="text-justify text-[1.4rem] md:text-[1.8rem]">
+                        MedSecOp is decentralizing and democratizing medical second opinions by providing expert, unbiased reviews from independent doctors — empowering patients and healthcare providers to make confident healthcare decisions. Coming soon, MedSecOp AI will leverage cutting-edge clinical decision support AI to deliver faster, more precise insights and better patient care
+                    </p>
+                    <!-- fixed bg -->
+                    <div class="w-full my-[30px] about_section_two_bg h-[60px] md:h-[120px] bg-fixed bg-cover bg-no-repeat" style="background-image: url('./assets/about_us_link_bg.webp');"></div>
+                    <!-- our mission -->
+                    <div data-aos="fade-left" data-aos-duration="500" class="flex flex-col gap-[10px]">
+                        <!-- heading -->
+                        <p class="text-[2rem] leading-[1.25] md:text-[2.4rem] font-bold">Our <span class="text-[2rem] md:text-[2.4rem] text-blue-primary">Mission</span></p>
+                        <!-- body -->
+                        <p class="text-[1.4rem] md:text-[1.8rem]">
+                            At MedSecOp, our mission is to provide high-quality, independent pathology reviews that empower healthcare professionals and patients with precise, data-driven insights. Through a network of experienced medical specialists and AI-assisted analysis, we enhance diagnostic accuracy, reduce uncertainty, and improve patient care. We are committed to fostering trust, transparency, and accessibility in medical second opinions, ensuring that every diagnosis is backed by the highest standards of medical excellence.
+                        </p>
+                        <!-- cta -->
+                        <a data-aos="fade-up" data-aos-duration="500" href="./services.html" class="uppercase bg-blue-primary transition-all border border-blue-primary text-white font-medium hover:bg-transparent hover:border-blue-primary hover:text-blue-primary text-[1.2rem] py-[1.4rem] px-[3rem] w-fit">See What We Do</a>
+                    </div>
+                    <!-- fixed bg -->
+                    <div class="w-full my-[30px] about_section_two_bg h-[60px] md:h-[120px] bg-fixed bg-cover bg-no-repeat" style="background-image: url('./assets/about_us_link_bg.webp');"></div>
+                    <!-- our vision -->
+                    <div data-aos="fade-right" data-aos-duration="500" class="flex flex-col items-end gap-[10px]">
+                        <!-- heading -->
+                        <p class="text-[2rem] leading-[1.25] md:text-[2.4rem] font-bold">Our <span class="text-[2rem] md:text-[2.4rem] text-blue-primary">Vision</span></p>
+                        <!-- body -->
+                        <p class="text-[1.4rem] md:text-[1.8rem] text-right">
+                            To revolutionize medical diagnostics by ensuring every patient receives accurate, reliable, and expert-driven pathology reviews, leveraging both human expertise and advanced AI to improve healthcare outcomes globally.
+                        </p>
+                        <!-- cta -->
+                        <a data-aos="fade-up" data-aos-duration="500" href="./services.html" class="uppercase bg-blue-primary transition-all border border-blue-primary text-white font-medium hover:bg-transparent hover:border-blue-primary hover:text-blue-primary text-[1.2rem] py-[1.4rem] px-[3rem] w-fit">See What We Do</a>
                     </div>
                 </div>
             </section>
@@ -177,19 +161,15 @@
                         <!-- social links -->
                         <div class="flex mt-[15px] gap-[10px]">
                             <!-- twitter -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://twitter.com/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-x-twitter text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
-                            <!-- facebook -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
-                                <i class="fa-brands fa-facebook text-[#fff] text-opacity-75 text-[1.6rem]"></i>
-                            </a>
                             <!-- instagram -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://www.instagram.com/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-instagram text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
                             <!-- linkedIn -->
-                            <a href="#" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
+                            <a href="https://www.linkedin.com/in/MedSecOP" target="_blank" class="bg-[#ffffff45] p-[12px] rounded-md transition-all hover:text-black hover:bg-blue-primary text-white">
                                 <i class="fa-brands fa-linkedin text-[#fff] text-opacity-75 text-[1.6rem]"></i>
                             </a>
                         </div>
@@ -222,7 +202,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">What We Do</a>
+                                <a href="./services.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Our Services</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -231,6 +211,14 @@
                                 </svg>
                                 <!-- link -->
                                 <a href="./terms_of_service.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Terms of service</a>
+                            </div>
+                            <div class="flex gap-[5px] items-center">
+                                <!-- icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#106eea" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <!-- link -->
+                                <a href="./our_technology.html" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Our Technology</a>
                             </div>
                         </div>
                     </div>
@@ -246,7 +234,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html#stprDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Pathology Review</a>
+                                <a href="./services.html#stmirDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Single-Turn Medical Image Review</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
@@ -254,7 +242,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                                 <!-- link -->
-                                <a href="./services.html#mrrDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Reviews (2,3, or 4 Reviews)</a>
+                                <a href="./services.html#mrmirDiv" class="text-[#fff] text-opacity-75 text-[1.4rem] hover:text-blue-primary transition-all">Multi-Round Medical Image Review (2,3, or 4 Reviews)</a>
                             </div>
                             <div class="flex gap-[5px] items-center">
                                 <!-- icon -->
